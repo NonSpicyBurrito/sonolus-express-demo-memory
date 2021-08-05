@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sonolus-express-demo-memory</title>
+</head>
+
+<style>
+    input,
+    textarea {
+        display: block;
+        margin-bottom: 0.5em;
+    }
+</style>
+
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="Song Title">
+        <label for="artists">Artists:</label>
+        <input type="text" name="artists" id="artists" value="Artist Names">
+        <label for="author">Author:</label>
+        <input type="text" name="author" id="author" value="Author Name">
+        <label for="rating">Rating:</label>
+        <input type="number" name="rating" id="rating" value="25">
+        <label for="cover">Cover:</label>
+        <input type="file" name="cover" id="cover">
+        <label for="bgm">BGM:</label>
+        <input type="file" name="bgm" id="bgm">
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <label for="chart">Chart (Bestdori format):</label>
+        <textarea name="chart" id="chart" cols="30" rows="10"></textarea>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+
+</html>
