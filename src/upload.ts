@@ -65,7 +65,7 @@ export function installUploader(sonolus: Sonolus): void {
                 res.send('Success!')
             } catch (e) {
                 console.error(e)
-                res.status(502).end()
+                res.status(500).end()
             }
         }
     )
