@@ -1,5 +1,4 @@
-import { readdirSync } from 'fs'
-import { readJsonSync } from 'fs-extra'
+import { readdirSync, readJsonSync } from 'fs-extra'
 import { Sonolus } from 'sonolus-express'
 
 export const levelsPath = './levels'
