@@ -8,6 +8,7 @@ A simple Sonolus custom server to demonstrate usage of [sonolus-express](https:/
 -   [Sonolus Wiki](https://github.com/NonSpicyBurrito/sonolus-wiki)
 -   [sonolus-express](https://github.com/NonSpicyBurrito/sonolus-express)
 -   [sonolus-pack](https://github.com/NonSpicyBurrito/sonolus-pack)
+-   [sonolus-express-demo-dynamic](https://github.com/NonSpicyBurrito/sonolus-express-demo-dynamic)
 
 ## About
 
@@ -28,7 +29,7 @@ Additional notes:
 -   This custom server is NOT production ready, it is meant as a demo.
 -   All repository resources are not kept in memory.
 -   All item info are kept in memory (`sonolus.db`), which allows [sonolus-express](https://github.com/NonSpicyBurrito/sonolus-express) default handlers to do their jobs automatically.
--   Keeping all item info in memory has non-negligible memory usage cost, and is meant for small to medium scale servers. For large scale servers with potentially too many item, it is recommended to implement respective handlers.
+-   Keeping all item info in memory has non-negligible memory usage cost, and is meant for small to medium scale servers. For large scale servers that requires indefinite scaling, see [sonolus-express-demo-dynamic](https://github.com/NonSpicyBurrito/sonolus-express-demo-dynamic).
 
 ## Building
 
