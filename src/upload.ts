@@ -6,7 +6,7 @@ import { Sonolus } from 'sonolus-express'
 import { promisify } from 'util'
 import { gzip } from 'zlib'
 import { engineName } from './engine'
-import { loadLevel, sortLevels } from './levels'
+import { levelsPath, loadLevel, sortLevels } from './levels'
 
 const upload = multer({ storage: memoryStorage() })
 
@@ -25,8 +25,8 @@ export function installUploader(sonolus: Sonolus): void {
                 // use upload time as name
                 const name = Date.now().toString(16)
 
-                // write info to "./levels/:name/info"
-                await outputJson(`./levels/${name}/info`, {
+                // write info to "levels/:name/info"
+                await outputJson(`${levelsPath}/${name}/info`, {
                     version: 1,
                     engine: engineName,
                     useSkin: { useDefault: true },
@@ -40,21 +40,21 @@ export function installUploader(sonolus: Sonolus): void {
                     rating: req.body.rating,
                 })
 
-                // write cover to "./levels/:name/cover"
+                // write cover to "levels/:name/cover"
                 await outputFile(
-                    `./levels/${name}/cover`,
+                    `${levelsPath}/${name}/cover`,
                     req.files.cover[0].buffer
                 )
 
-                // write bgm to "./levels/:name/bgm"
+                // write bgm to "levels/:name/bgm"
                 await outputFile(
-                    `./levels/${name}/bgm`,
+                    `${levelsPath}/${name}/bgm`,
                     req.files.bgm[0].buffer
                 )
 
-                // write data to "./levels/:name/data"
+                // write data to "levels/:name/data"
                 await outputFile(
-                    `./levels/${name}/data`,
+                    `${levelsPath}/${name}/data`,
                     await toLevelData(req.body.chart)
                 )
 
